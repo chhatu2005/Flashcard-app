@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Flashcard App</h1>
+        <p class="subtitle">Learn something new every day</p>
+
+        <div class="progress-info">
+            <span id="cardNumber">Card 1 of 10</span>
+            <span id="progressPercent">10%</span>
+        </div>
+
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+
+        <div class="card-scene" onclick="flipCard()">
+            <div class="flashcard" id="flashcard">
+                <div class="card-face card-front">
+                    <span class="card-label">QUESTION</span>
+                    <h2 id="question">What is HTML ?</h2>
+                    <p class="flip-hint">Click the card to reveal answer </p>
+                </div>
+
+                <div class="card-face card-back">
+                    <span class="card-label">ANSWER</span>
+                    <h2 id="answer">HyperText Markup Language</h2>
+                    <p class="flip-hint">Click to see question </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button id="prevBtn" onclick="previousCard()">← Previous</button>
+            <button id="nextBtn" onclick="nextCard()">Next →</button>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

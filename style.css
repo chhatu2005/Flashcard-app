@@ -1,0 +1,203 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(146, 127, 127, 0.667);
+}
+
+.container {
+    width: 100%;
+    max-width: 550px;
+    padding: 30px;
+    background-color: #eee;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #a56969;
+}
+
+h1 {
+    color: #293d83;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 14px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+#progressFill {
+    width: 10%;
+    height: 100%;
+    background-color: #667eea;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.card-scene {
+    width: 100%;
+    height: 260px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flashcard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+.flashcard.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card-front {
+    background: #eef1ff;
+    color: #293d83;
+}
+
+.card-back {
+    background-color: #e0f7ec;
+    color: #176342;
+    transform: rotateY(180deg);
+}
+
+.card-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card-face h2 {
+    font-size: 24px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.flip-hint {
+    font-size: 13px;
+    margin-top: 22px;
+    opacity: 0.75;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+button {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #667eea;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #4d5fca;
+}
+
+button:disabled {
+    background-color: #c5c9d8;
+    cursor: not-allowed;
+}
+
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 22px 16px;
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .card-scene {
+        height: 240px;
+    }
+
+    .card-face {
+        padding: 18px;
+    }
+
+    .card-face h2 {
+        font-size: 21px;
+    }
+
+    .navigation {
+        gap: 10px;
+    }
+
+    button {
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 320px) {
+    .card-scene {
+        height: 220px;
+    }
+
+    .card-face h2 {
+        font-size: 18px;
+    }
+}
